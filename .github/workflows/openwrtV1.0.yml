@@ -14,10 +14,10 @@ on:
     branches: 
       - master
   #     ↑↑↑ 改成你的分支名, 一般是master
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
-  #   types: [published]
+  schedule:
+    - cron: 0 20 * * *
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -102,11 +102,11 @@ jobs:
           # 
 
           # 树莓派4b固件:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_TARGET_bcm27xx=y
           # CONFIG_TARGET_bcm27xx_bcm2711=y
           # CONFIG_TARGET_bcm27xx_bcm2711_DEVICE_rpi-4=y
-          # EOF
+          EOF
           
           # 编译x64固件:
           cat >> .config <<EOF
